@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-no-undef */
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Card from '../Card/Card'
 import ExpenseFilter from '../ExpenseFilter/ExpenseFilter'
 import ExpensesList from '../ExpensesList/ExpensesList'
 import './Expenses.css'
+import ExpensesChart from './ExpensesChart'
 
 const Expenses = ({ expenses }) => {
 
@@ -24,6 +25,7 @@ const Expenses = ({ expenses }) => {
                     selected={filteredYear}
                     onChangeFilter={filterChangeHandler}
                 />
+                <ExpensesChart expenses={filteredExpenses}/>
                 <ExpensesList filteredExpenses={filteredExpenses} />
             </Card>
         </div>
